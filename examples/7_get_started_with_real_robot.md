@@ -140,6 +140,11 @@ sudo chmod 666 /dev/tty.usbmodem575E0032081
 sudo chmod 666 /dev/tty.usbmodem575E0031751
 ```
 
+or you can add the user to the `dialout` group:
+```bash
+sudo usermod -a -G dialout $USER
+```
+
 *Listing and Configuring Motors*
 
 Next, you'll need to list the motors for each arm, including their name, index, and model. Initially, each motor is assigned the factory default index `1`. Since each motor requires a unique index to function correctly when connected in a chain on a common bus, you'll need to assign different indices. It's recommended to use an ascending index order, starting from `1` (e.g., `1, 2, 3, 4, 5, 6`). These indices will be saved in the persistent memory of each motor during the first connection.
